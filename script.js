@@ -50,10 +50,14 @@ function renter() {
 }
 	            
 function rentacar() {
-    if('firstame'==' ' || "lastname"==' ') {
+    if('firstame'==" " || "lastname"==" ") {
         alert("all fields must be filled");
     }
-	 else if {
-    ('selected.value'== '')
+	else if 
+    ('selected.value'== ''){
       alert('Please select a car type.');
+    }
+    else {
+        document.getElementById("renter").innerHTML = renter.name + "you have reserved a " + Cars.value; 
+    }
 };
