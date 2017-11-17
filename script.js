@@ -28,7 +28,7 @@ var Cars = {
 }
 
 var renter = {
-    name:'firstName' + 'LastName',
+    name:'firstname' + 'lastname',
     rentalType:''
 }
 
@@ -49,4 +49,11 @@ function renter() {
     document.getElementById("renter").innerHTML = renter.name;    
 }
 	            
-	 
+function rentacar() {
+    if('firstame'==' ' || "lastname"==' ') {
+        alert("all fields must be filled");
+    }
+	 else if {
+    ('selected.value'== '')
+      alert('Please select a car type.');
+};

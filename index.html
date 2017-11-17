@@ -13,51 +13,46 @@
 		Enter your first name: <input name="firstname" type="text"><br>
 		<br>
 		Enter your last name: <input name="lastname" type="text"><br>
-	
 		<br>
-			<hr>
-				Select a car type: <select name="cars" onchange="infoFunction()","renter()">
-					<option selected value="">
-					</option>
-					<option value="economyCar">
-						economyCar
-					</option>
-					<option value="midsizeCar">
-						midsizeCar
-					</option>
-				</select><br>
-				<br>
-				<button onclick="renter()" type="button">Enter</button>
-				<br>
-				Rent a car
-			    <br>
-				<input onsubmit="rentacar()" type="submit">
-			</form>
-			<hr>
-			<h2>Renter:</h2>
-			<p id="renter"></p>
-			<h3>Business Name:</h3>
-			<p id="name"></p>
-			<h4>Economy Cars Available:</h4>
-			<p id="economyAvail"></p>
-			<h4>Price per day:</h4>
-			<p id="price"></p>
-			<h4>Midsize Cars Available:</h4>
-			<p id="midsizeAvail"></p>
-			<h4>Price per day:</h4>
-			<p id="price2"></p>
-			<script>
-			     window.onload = function() {
-			    document.getElementById("economyAvail").innerHTML = this.economyAvail();        
-			    }
-			    
-			                  window.onload = function() {
-			    document.getElementById("midsizeAvail").innerHTML = this.midsizeAvail();        
-			    }
-			</script> 
-			<script src="script.js">
-			</script> 
-		</form>
+		<hr>
+		Select a car type: <select name="cars" onchange="infoFunction()">
+			<option selected value="">
+			</option>
+			<option value="economyCar">
+				economyCar
+			</option>
+			<option value="midsizeCar">
+				midsizeCar
+			</option>
+		</select><br>
+		<br>
+		<button onclick="renter()" type="button">Enter</button><br>
+		Rent a car<br>
+		<input onsubmit="rentacar()" type="submit">
 	</form>
+	<hr>
+	<h2>Renter:</h2>
+	<p id="renter"></p>
+	<h3>Business Name:</h3>
+	<p id="name"></p>
+	<h4>Economy Cars Available:</h4>
+	<p id="economyAvail"></p>
+	<h4>Price per day:</h4>
+	<p id="price"></p>
+	<h4>Midsize Cars Available:</h4>
+	<p id="midsizeAvail"></p>
+	<h4>Price per day:</h4>
+	<p id="price2"></p>
+	<script>
+	                window.onload = function() {
+	               document.getElementById("economyAvail").innerHTML = this.economyAvail();        
+	               }
+	               
+	                             window.onload = function() {
+	               document.getElementById("midsizeAvail").innerHTML = this.midsizeAvail();        
+	               }
+	</script> 
+	<script src="script.js">
+	</script> 
 </body>
 </html>
