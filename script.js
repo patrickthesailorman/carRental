@@ -1,3 +1,6 @@
+/*global input*/
+/*global form*/
+
 var Cars = {
       name: 'Enterprise Rental Cars',
       types: ['economyCar', 'midsizeCar'],
@@ -28,8 +31,10 @@ var Cars = {
 }
 
 var renter = {
+    firstname: input.value,
+    lastname: input.value,
     name:'firstname' + 'lastname',
-    rentalType:''
+    rentalType: input.value
 }
 
 function infoFunction() {
@@ -50,7 +55,7 @@ function renter() {
 }
 	            
 function rentacar() {
-    if('firstame'==" " || "lastname"==" ") {
+    if(input.firstname ==" " || input.lastname ==" ") {
         alert("all fields must be filled");
     }
 	else if 
@@ -59,5 +64,17 @@ function rentacar() {
     }
     else {
         document.getElementById("renter").innerHTML = renter.name + "you have reserved a " + Cars.value; 
+        if(this.Cars.type == 'economyCar') {
+            this.carsBooked ++;
+        } 
+        else {
+            (this.Cars.type == 'midsizeCar') 
+            this.midsizeBooked ++;
+        } 
+       
     }
-};
+}
+
+function carSelect() {
+    document.getElementById("carType").innerHTML = form.select.option.value;
+}

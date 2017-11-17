@@ -9,13 +9,23 @@
 </head>
 <body>
 	<h1>Rent a car</h1>
+	<h3>Business Name:</h3>
+	<p id="name"></p>
+	<h4>Economy Cars Available:</h4>
+	<p id="economyAvail"></p>
+	<h4>Price per day:</h4>
+	<p id="price"></p>
+	<h4>Midsize Cars Available:</h4>
+	<p id="midsizeAvail"></p>
+	<h4>Price per day:</h4>
+	<p id="price2"></p>
 	<form>
-		Enter your first name: <input name="firstname" type="text"><br>
+		Enter your first name: <input id="firstname" name="firstname" type="text"><br>
 		<br>
-		Enter your last name: <input name="lastname" type="text"><br>
+		Enter your last name: <input id="lastname" name="lastname" type="text"><br>
 		<br>
 		<hr>
-		Select a car type: <select name="cars" onchange="infoFunction()">
+		Select a car type: <select name="cars" onchange="carSelect()">
 			<option selected value="">
 			</option>
 			<option value="economyCar">
@@ -27,32 +37,26 @@
 		</select><br>
 		<br>
 		<button onclick="renter()" type="button">Enter</button><br>
-		Rent a car<br>
+		Rent car<br>
 		<input onsubmit="rentacar()" type="submit">
 	</form>
 	<hr>
 	<h2>Renter:</h2>
 	<p id="renter"></p>
-	<h3>Business Name:</h3>
-	<p id="name"></p>
-	<h4>Economy Cars Available:</h4>
-	<p id="economyAvail"></p>
-	<h4>Price per day:</h4>
-	<p id="price"></p>
-	<h4>Midsize Cars Available:</h4>
-	<p id="midsizeAvail"></p>
-	<h4>Price per day:</h4>
-	<p id="price2"></p>
+	<h2>Car Type:</h2>
+	<p id="carType"></p>
+<script src="script.js">
+	</script> 	
 	<script>
-	                window.onload = function() {
-	               document.getElementById("economyAvail").innerHTML = this.economyAvail();        
-	               }
-	               
-	                             window.onload = function() {
-	               document.getElementById("midsizeAvail").innerHTML = this.midsizeAvail();        
-	               }
+	/*global Cars*/
+        window.onload = function() {
+        	document.getElementById("name").innerHTML = Cars.name;
+    		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
+    		document.getElementById("price").innerHTML = '$' + Cars.econPrice;
+    		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
+    		document.getElementById("price2").innerHTML = '$' + Cars.midsizePrice;
+       }
 	</script> 
-	<script src="script.js">
-	</script> 
+	
 </body>
 </html>
