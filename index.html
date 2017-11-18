@@ -20,9 +20,9 @@
 	<h4>Price per day:</h4>
 	<p id="price2"></p>
 	<form>
-		Enter your first name: <input id="firstname" name="firstname" type="text"><br>
+		Enter your first name: <input id="firstName" name="firstName" type="text"><br>
 		<br>
-		Enter your last name: <input id="lastname" name="lastname" type="text"><br>
+		Enter your last name: <input id="lastName" name="lastName" type="text"><br>
 		<br>
 		<hr>
 		Select a car type: <select name="cars" onchange="carSelect()">
@@ -45,18 +45,8 @@
 	<p id="renter"></p>
 	<h2>Car Type:</h2>
 	<p id="carType"></p>
-<script src="script.js">
+	<script src="script.js">
 	</script> 	
-	<script>
-	/*global Cars*/
-        window.onload = function() {
-        	document.getElementById("name").innerHTML = Cars.name;
-    		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
-    		document.getElementById("price").innerHTML = '$' + Cars.econPrice;
-    		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
-    		document.getElementById("price2").innerHTML = '$' + Cars.midsizePrice;
-       }
-	</script> 
 	
 </body>
 </html>

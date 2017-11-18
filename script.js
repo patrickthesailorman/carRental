@@ -1,6 +1,7 @@
 /*global input*/
 /*global form*/
 
+
 var Cars = {
       name: 'Enterprise Rental Cars',
       types: ['economyCar', 'midsizeCar'],
@@ -30,25 +31,33 @@ var Cars = {
         },
 }
 
+window.onload = function() {
+        	document.getElementById("name").innerHTML = Cars.name;
+    		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
+    		document.getElementById("price").innerHTML = '$' + Cars.econPrice;
+    		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
+    		document.getElementById("price2").innerHTML = '$' + Cars.midsizePrice;
+       }
+
 var renter = {
-    firstname: input.value,
-    lastname: input.value,
-    name:'firstname' + 'lastname',
+    firstName: input.value,
+    lastName: input.value,
+    name:'firstName' + 'lastName',
     rentalType: input.value
 }
 
-function infoFunction() {
-   document.getElementById("name").innerHTML = Cars.name;
+// function infoFunction() {
+//   document.getElementById("name").innerHTML = Cars.name;
 
-   document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
+//   document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
 
-   document.getElementById("price").innerHTML = "$" + Cars.econPrice;
+//   document.getElementById("price").innerHTML = "$" + Cars.econPrice;
    
-   document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
+//   document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
 	            
-   document.getElementById("price2").innerHTML = "$" + Cars.midsizePrice;
+//   document.getElementById("price2").innerHTML = "$" + Cars.midsizePrice;
     
-}
+// }
 
 function renter() {
     document.getElementById("renter").innerHTML = renter.name;    
