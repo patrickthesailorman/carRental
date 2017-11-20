@@ -25,8 +25,8 @@
 		Enter your last name: <input id="lastName" name="lastName" type="text"><br>
 		<br>
 		<hr>
-		Select a car type: <select name="cars" onchange="carSelect()">
-			<option selected value="">
+		Select a car type: <select id="carType" name="carType" onchange="carSelect()">
+			<option selected value=" ">
 			</option>
 			<option value="economyCar">
 				economyCar
@@ -36,9 +36,9 @@
 			</option>
 		</select><br>
 		<br>
-		<button onclick="renter()" type="button">Enter</button><br>
+		<button onclick="addRenter()" type="button">Enter</button><br>
 		Rent car<br>
-		<input onsubmit="rentacar()" type="submit">
+		<input onsubmit="addRenter(), rentacar()" type="submit">
 	</form>
 	<hr>
 	<h2>Renter:</h2>

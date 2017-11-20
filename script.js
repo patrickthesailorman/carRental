@@ -40,49 +40,51 @@ window.onload = function() {
        }
 
 var renter = {
-    firstName: input.value,
-    lastName: input.value,
+    firstName: "firstName".input.value,
+    lastName: "lastName".input.value,
     name:'firstName' + 'lastName',
-    rentalType: input.value
-}
+    rentalType: input.value,
+    renters: [
+         {
+            firstName: "Joe",
+            lastName: "Blow",
+            name: "Joe Blow",
+            rentalType: "economyCar",
+},
 
-// function infoFunction() {
-//   document.getElementById("name").innerHTML = Cars.name;
-
-//   document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
-
-//   document.getElementById("price").innerHTML = "$" + Cars.econPrice;
-   
-//   document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
-	            
-//   document.getElementById("price2").innerHTML = "$" + Cars.midsizePrice;
-    
-// }
+function addRenter(renter) {
+    if(document.getElementById("firstname").input.value ==" " || document.getElementById("lastname").input.value ==" ") {
+        alert("all fields must be filled");
+    } else{
+        renters.push(renter);
+        renter();
+    }
+},
 
 function renter() {
     document.getElementById("renter").innerHTML = renter.name;    
-}
+},
 	            
 function rentacar() {
-    if(input.firstname ==" " || input.lastname ==" ") {
+    if(document.getElementById("firstName").Value == " " || document.getElementById("lastName").Value  ==" ") {
         alert("all fields must be filled");
     }
 	else if 
-    ('selected.value'== ''){
+    (document.getElementById("carType").Value == ' '){
       alert('Please select a car type.');
     }
     else {
-        document.getElementById("renter").innerHTML = renter.name + "you have reserved a " + Cars.value; 
+        document.getElementById("renter").innerHTML = this.renter.name + "you have reserved a " + this.Cars.value; 
         if(this.Cars.type == 'economyCar') {
-            this.carsBooked ++;
+            rentEconomy();
         } 
         else {
             (this.Cars.type == 'midsizeCar') 
-            this.midsizeBooked ++;
+            rentMidsize();
         } 
        
     }
-}
+},
 
 function carSelect() {
     document.getElementById("carType").innerHTML = form.select.option.value;
