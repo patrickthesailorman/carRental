@@ -34,12 +34,14 @@ var renter = {
 		renters: []
 };
 
-	var firstName = document.getElementById("inputFirstName").value
-	var lastName = document.getElementById("inputLastName").value 
+	var firstName = "";
+	var lastName = "";
 	var carSelected = "";
 
 
 function addRenter() {
+	 firstName = document.getElementById("inputFirstName").value;
+	 lastName = document.getElementById("inputLastName").value;
 		if (firstName == "" || lastName == "") {
 		alert("all fields must be filled");
 		} else if 
