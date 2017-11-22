@@ -2,73 +2,111 @@
 /*global form*/
 var Cars = {
 	name: 'Enterprise Rental Cars',
-	types: ['economyCar', 'midsizeCar'],
-	economyCars: 500,
-	carsBooked: 150,
-	midsizeCars: 500,
-	midsizeBooked: 100,
-	econPrice: 20,
-	midsizePrice: 35,
+	types: [{
+		type: 'economyCar',
+		economyCars: 500,
+		carsBooked: 150,
+		econPrice: 20,
+	},
+	{
+		type: 'midsizeCar',
+		midsizeCars: 500,
+		midsizeBooked: 100,
+		midsizePrice: 35,
+	}],
+	
 	economyAvail: function() {
-		return this.economyCars - this.carsBooked;
+		return this.types[0].economyCars - this.types[0].carsBooked;
 	},
+	
 	midsizeAvail: function() {
-		return this.midsizeCars - this.midsizeBooked;
+		return this.types[1].midsizeCars - this.types[1].midsizeBooked;
 	},
+	
 	rentEconomy: function() {
-		return this.carsBooked + 1 && this.economyAvail();
+		return this.types[0].carsBooked ++ && this.types[0].economyAvail();
 	},
+	
 	rentMidsize: function() {
-		return this.midsizeBooked + 1 && this.midsizeAvail();
+		return this.types[1].midsizeBooked + 1 && this.types[1].midsizeAvail();
 	},
 }
-
-window.onload = function() {
-	document.getElementById("name").innerHTML = Cars.name;
-	document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
-	document.getElementById("price").innerHTML = '$' + Cars.econPrice;
-	document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
-	document.getElementById("price2").innerHTML = '$' + Cars.midsizePrice;
-};
 
 var renter = {
-		firstName: document.getElementById("firstName").value,
-		lastName: document.getElementById("lastName").value,
-		name: 'firstName' + 'lastName',
-		rentalType: document.getElementById("carType").Value,
-		renters: [{
-					firstName: "Joe",
-					lastName: "Blow",
-					name: "Joe Blow",
-					rentalType: "economyCar",
-				}]
+		renters: []
+};
+
+var firstName = document.getElementById("inputFirstName").value
+var lastName = document.getElementById("inputLastName").value 
+var carSelected = document.getElementById("carType").value;
+
+function addRenter() {
+	
+	
+		if (firstName == "" || lastName == "") {
+		alert("all fields must be filled");
+		} else if 
+			(document.getElementById("carType").value == "Please select a vehicle") {
+				alert("Please select a vehicle");
+	} else {
+		
+		renter.renters.push({
+			custFirstName: firstName,
+			custLastName: lastName,
+			carType: carSelected
+			});
+		displayRenter();
+	}
+}	
+
+function displayRenter() {
+	document.getElementById("customer").innerHTML = firstName + " " + lastName;
+}	
+	
+function carSelect() {
+	
+	renter.renters.push({
+		carType: carSelected
+	});
+	displayInfo();
 }
-				function addRenter(renter) {
-					if (document.getElementById("firstname").value == " " || document.getElementById("lastname").value == " ") {
-						alert("all fields must be filled");
-					} else {
-						this.renters.push(renter);
-						renter();
-					}
-				}
-				function renter() {
-					document.getElementById("renter").innerHTML = this.renter.name;
-				}
-				function rentacar() {
-					if (document.getElementById("firstName").value == " " || document.getElementById("lastName").value == " ") {
-						alert("all fields must be filled");
-					} else if (document.getElementById("carType").value == ' ') {
-						alert('Please select a car type.');
-					} else {
-						document.getElementById("renter").innerHTML = this.renter.name + "you have reserved a " + this.Cars.value;
-						if (this.Cars.type == 'economyCar') {
-							this.rentEconomy();
-						} else {
-							(this.Cars.type == 'midsizeCar')
-							this.rentMidsize();
-						}
-					}
-				}
-				function carSelect() {
-					document.getElementById("carType").innerHTML = document.getElementById("carType").value;
-				}
+
+function displayInfo() {
+	
+	document.getElementById("yourCarType").innerHTML = carSelected;
+	if(carSelected == Cars.types[0]) {
+		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
+		document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
+	} else {
+		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
+		document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
+	}
+}
+	
+	
+window.onload = function() {
+	document.getElementById("name").innerHTML = Cars.name;
+};
+
+
+			
+				
+				
+				
+				// function rentacar() {
+				// 	var carSelected = document.getElementById("carType").value;
+				// 	if (document.getElementById("firstName").value == " " || document.getElementById("lastName").value == " ") {
+				// 		alert("all fields must be filled");
+				// 	} else if (document.getElementById("carType").value == ' ') {
+				// 		alert('Please select a car type.');
+				// 	} else {
+				// 		document.getElementById("customer").value + "you have reserved a " + carSelected;
+				// 		if (Cars.types[0]) {
+				// 			Cars.rentEconomy();
+				// 		} else {
+				// 			(this.Cars.types[1])
+				// 			Cars.rentMidsize();
+				// 		}
+				// 	}
+				// }
+				

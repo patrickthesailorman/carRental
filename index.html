@@ -10,24 +10,17 @@
 <body>
 	<h1>Rent a car</h1>
 	<h3>Business Name:</h3>
-	<p id="name"></p>
-	<h4>Economy Cars Available:</h4>
-	<p id="economyAvail"></p>
-	<h4>Price per day:</h4>
-	<p id="price"></p>
-	<h4>Midsize Cars Available:</h4>
-	<p id="midsizeAvail"></p>
-	<h4>Price per day:</h4>
-	<p id="price2"></p>
+	<strong><p id="name"></p></strong>
+
 	<form>
-		Enter your first name: <input id="firstName" name="firstName" type="text"><br>
+		Enter your first name: <input id="inputFirstName" name="firstName" type="text"><br>
 		<br>
-		Enter your last name: <input id="lastName" name="lastName" type="text"><br>
+		Enter your last name: <input id="inputLastName" name="lastName" type="text"><br>
 		<br>
 		<hr>
-		Select a car type: <select id="carType" name="carType" onchange="carSelect()">
-			<option selected value=" ">
-			</option>
+		Select a car type: <select id="carType" name="carType" onchange="displayInfo()">
+			<!--<option selected value="Please select a vehicle">Please select a vehicle-->
+			<!--</option>-->
 			<option value="economyCar">
 				economyCar
 			</option>
@@ -37,14 +30,23 @@
 		</select><br>
 		<br>
 		<button onclick="addRenter()" type="button">Enter</button><br>
-		Rent car<br>
-		<input onsubmit="addRenter(), rentacar()" type="submit">
-	</form>
+		
+	
 	<hr>
-	<h2>Renter:</h2>
-	<p id="renter"></p>
+	<h2>Customer:</h2>
+	<p id="customer"></p>
 	<h2>Car Type:</h2>
-	<p id="carType"></p>
+	<p id="yourCarType"></p>
+	<h4>Available:</h4>
+	<p id="economyAvail"></p>
+	<p id="midsizeAvail"></p>
+	<h4>Price:</h4>
+	<p id="price"></p>
+	<p id="price2"></p>
+	<h3>Submit to Rent car:</h3>
+		<input onsubmit="rentacar()" type="submit">
+		</form>
+		
 	<script src="script.js">
 	</script> 	
 	
