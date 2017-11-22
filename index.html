@@ -13,13 +13,13 @@
 	<h3>Business Name:</h3>
 	<strong><p id="name"></p></strong>
 
-	<form>
+	<form id="reservationForm">
 		Enter your first name: <input id="inputFirstName" name="firstName" type="text"><br>
 		<br>
 		Enter your last name: <input id="inputLastName" name="lastName" type="text"><br>
 		<br>
 		<hr>
-		Select a car type: <select id="carType" name="carType" onchange="displayInfo()">
+		Select a car type: <select id="carType" name="carType" onchange="displayInfo()", "addRenter()">
 			<option value="Please select a vehicle">
 				Please select a vehicle
 			</option>
@@ -31,8 +31,10 @@
 			</option>
 		</select><br>
 		<br>
-		<button onclick="addRenter()" type="button">Enter</button><br>
-		
+		<!--<button onclick="addRenter()" type="button">Enter</button><br>-->
+		<h3>Submit to Rent car:</h3>
+		<input onclick ="rentacar()" type="submit">
+		</form>
 	
 	<hr>
 	<h2>Customer:</h2>
@@ -45,9 +47,7 @@
 	<h4>Price:</h4>
 	<p id="price"></p>
 	<p id="price2"></p>
-	<h3>Submit to Rent car:</h3>
-		<input onsubmit="rentacar()" type="submit">
-		</form>
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>	
