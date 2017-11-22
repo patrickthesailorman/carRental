@@ -36,13 +36,13 @@ var renter = {
 		renters: []
 };
 
-var firstName = document.getElementById("inputFirstName").value
-var lastName = document.getElementById("inputLastName").value 
-var carSelected = document.getElementById("carType").value;
+
+
 
 function addRenter() {
-	
-	
+	var firstName = document.getElementById("inputFirstName").value
+	var lastName = document.getElementById("inputLastName").value 
+	var carSelected = document.getElementById("carType").value;
 		if (firstName == "" || lastName == "") {
 		alert("all fields must be filled");
 		} else if 
@@ -60,26 +60,33 @@ function addRenter() {
 }	
 
 function displayRenter() {
+	var firstName = document.getElementById("inputFirstName").value
+	var lastName = document.getElementById("inputLastName").value 
 	document.getElementById("customer").innerHTML = firstName + " " + lastName;
 }	
 	
-function carSelect() {
-	
-	renter.renters.push({
-		carType: carSelected
-	});
-	displayInfo();
-}
+// function carSelect() {
+// var carSelected = document.getElementById("carType").value;
+// 	renter.renters.push({
+// 		carType: carSelected
+// 	});
+// 	displayInfo();
+// }
 
 function displayInfo() {
-	
+	var carSelected = document.getElementById("carType").value;
 	document.getElementById("yourCarType").innerHTML = carSelected;
-	if(carSelected == Cars.types[0]) {
+	console.log("Help me");
+	if(document.getElementById("carType").value == Cars.types[0]) {
 		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
 		document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
-	} else {
+	} else if
+		(document.getElementById("carType").value == Cars.types[1]) {
 		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
 		document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
+	}
+	else {
+		alert("Please Select a car type");
 	}
 }
 	
