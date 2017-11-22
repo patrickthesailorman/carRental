@@ -1,5 +1,3 @@
-/*global input*/
-/*global form*/
 var Cars = {
 	name: 'Enterprise Rental Cars',
 	types: [{
@@ -36,13 +34,12 @@ var renter = {
 		renters: []
 };
 
-
-
-
-function addRenter() {
 	var firstName = document.getElementById("inputFirstName").value
 	var lastName = document.getElementById("inputLastName").value 
 	var carSelected = document.getElementById("carType").value;
+
+
+function addRenter() {
 		if (firstName == "" || lastName == "") {
 		alert("all fields must be filled");
 		} else if 
@@ -60,8 +57,6 @@ function addRenter() {
 }	
 
 function displayRenter() {
-	var firstName = document.getElementById("inputFirstName").value
-	var lastName = document.getElementById("inputLastName").value 
 	document.getElementById("customer").innerHTML = firstName + " " + lastName;
 }	
 	
@@ -74,20 +69,20 @@ function displayRenter() {
 // }
 
 function displayInfo() {
-	var carSelected = document.getElementById("carType").value;
-	document.getElementById("yourCarType").innerHTML = carSelected;
-	console.log("Help me");
-	if(document.getElementById("carType").value == Cars.types[0]) {
-		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
-		document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
-	} else if
-		(document.getElementById("carType").value == Cars.types[1]) {
-		document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
-		document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
-	}
-	else {
-		alert("Please Select a car type");
-	}
+		if (carSelected == Cars.types[0].type) {
+			console.log("Why me");
+			document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
+			document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
+		} else if
+			(carSelected == Cars.types[1].type) {
+				console.log("WHY WHY");
+			document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
+			document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
+		}
+		document.getElementById("yourCarType").innerHTML = carSelected;
+		// else {
+		// 	alert("Please Select a car type");
+		// }
 }
 	
 	
