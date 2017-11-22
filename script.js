@@ -36,7 +36,7 @@ var renter = {
 
 	var firstName = document.getElementById("inputFirstName").value
 	var lastName = document.getElementById("inputLastName").value 
-	var carSelected = document.getElementById("carType").value;
+	var carSelected = "";
 
 
 function addRenter() {
@@ -69,15 +69,20 @@ function displayRenter() {
 // }
 
 function displayInfo() {
+	 carSelected = document.getElementById("carType").value;
 		if (carSelected == Cars.types[0].type) {
 			console.log("Why me");
 			document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
 			document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
+			document.getElementById("midsizeAvail").innerHTML = "";
+			document.getElementById("price2").innerHTML = "";
 		} else if
 			(carSelected == Cars.types[1].type) {
 				console.log("WHY WHY");
 			document.getElementById("midsizeAvail").innerHTML = Cars.midsizeAvail();
 			document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
+			document.getElementById("economyAvail").innerHTML = "";
+			document.getElementById("price").innerHTML = "";
 		}
 		document.getElementById("yourCarType").innerHTML = carSelected;
 		// else {
