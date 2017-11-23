@@ -94,18 +94,18 @@ function rentacar() {
 			
 		} else if (carSelected == "Please select a vehicle") {
 			alert('Please select a car type.');
-			
-		} else if (carSelected == Cars.types[0].type) {
-			Cars.rentEconomy();
-			
-		} else if (carSelected == Cars.types[1].type) {
-				Cars.rentMidsize();
-				
+		
 		} else {
 			alert(firstName + " " + lastName + " you have reserved the " + carSelected);
 			}
 			displayInfo();
-	
-		}
+	if (carSelected == Cars.types[0].type) {
+			Cars.rentEconomy();
+			
+		} else if (carSelected == Cars.types[1].type) {
+				Cars.rentMidsize();
+		}	
+		
 	}
 		
+}
