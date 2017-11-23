@@ -52,16 +52,14 @@ function addRenter() {
 function displayRenter() {
 	document.getElementById("customer").innerHTML = firstName + " " + lastName;
 }
-// function carSelect() {
-// var carSelected = document.getElementById("carType").value;
-// 	renter.renters.push({
-// 		carType: carSelected
-// 	});
-// 	displayInfo();
-// }
+
 function displayInfo() {
 	carSelected = document.getElementById("carType").value;
-	if (carSelected == Cars.types[0].type) {
+	if (firstName == "" || lastName == "") {
+		alert("all fields must be filled");
+	} else if (document.getElementById("carType").value == "Please select a vehicle") {
+		alert("Please select a vehicle");
+	} else if (carSelected == Cars.types[0].type) {
 		document.getElementById("economyAvail").innerHTML = Cars.economyAvail();
 		document.getElementById("price").innerHTML = '$' + Cars.types[0].econPrice;
 		document.getElementById("midsizeAvail").innerHTML = "";
@@ -71,9 +69,13 @@ function displayInfo() {
 		document.getElementById("price2").innerHTML = '$' + Cars.types[1].midsizePrice;
 		document.getElementById("economyAvail").innerHTML = "";
 		document.getElementById("price").innerHTML = "";
+	} else {
+		alert("Please Select a car type");
 	}
 	document.getElementById("yourCarType").innerHTML = carSelected;
+	displayRenter();
 }
+
 window.onload = function() {
 	document.getElementById("name").innerHTML = Cars.name;
 };
@@ -81,21 +83,29 @@ window.onload = function() {
 function rentacar() {
 	document.getElementById("reservationForm").onclick = function(event) {
 		event.preventDefault();
+		
 		carSelected = document.getElementById("carType").value;
 		firstName = document.getElementById("inputFirstName").value;
 		lastName = document.getElementById("inputLastName").value;
 		customer = document.getElementById("customer").value;
-		if (document.getElementById("inputFirstName").value == " " || document.getElementById("inputLastName").value == " ") {
+	
+		if (document.getElementById("inputFirstName").value == "" || document.getElementById("inputLastName").value == "") {
 			alert("all fields must be filled");
-		} else if (document.getElementById("carType").value == ' ') {
+			
+		} else if (carSelected == "Please select a vehicle") {
 			alert('Please select a car type.');
+			
+		} else if (carSelected == Cars.types[0].type) {
+			Cars.rentEconomy();
+			
+		} else if (carSelected == Cars.types[1].type) {
+				Cars.rentMidsize();
+				
 		} else {
 			alert(firstName + " " + lastName + " you have reserved the " + carSelected);
-			if (carSelected == Cars.types[0].type) {
-				Cars.rentEconomy();
-			} else if (carSelected == Cars.types[1].type) {
-				Cars.rentMidsize();
 			}
+			displayInfo();
+	
 		}
 	}
-}		
+		
